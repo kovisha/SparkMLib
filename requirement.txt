@@ -1,0 +1,6 @@
+flask==2.2.1
+matplotlib==3.4.3
+findspark==2.0.1
+py4j==0.10.9.3
+pyspark==3.1.2
+Werkzeug==2.2.2
