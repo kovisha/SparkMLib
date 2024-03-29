@@ -39,10 +39,10 @@ def predicted_genre(lyrics):
     data = [(lyrics,), ]  # add comma to make it a tuple
     df = spark.createDataFrame(data=data, schema=schema)
 
-    lr_model = PipelineModel.load("trained_models/seven_class_pipeline")
+    lr_model = PipelineModel.load("trained_models/eight_class_pipeline")
     predictions = lr_model.transform(df)
     probabilities = predictions.select('probability').collect()[0][0].toArray()
-    with open('datasets/class_labels.json', 'r') as file:
+    with open('datasets/class_labels2.json', 'r') as file:
         json_string = file.read()
     probability_dictionary = json.loads(json_string)
     probability_dictionary = {k: v for k, v in sorted(probability_dictionary.items())}
