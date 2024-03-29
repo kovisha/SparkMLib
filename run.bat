@@ -1,0 +1,6 @@
+@echo off
+echo Activating virtual environment...
+call newvenv\Scripts\activate.bat
+
+echo Running Python Application script...
+python application.py
