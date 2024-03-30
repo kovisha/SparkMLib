@@ -10,7 +10,7 @@ import findspark
 findspark.init() 
 
 spark = SparkSession.builder.appName("LyricsClassifierApp").getOrCreate()
-df = spark.read.csv("datasets\Merged_dataset.csv",header=True,inferSchema=True)
+df = spark.read.csv("Merged_dataset.csv",header=True,inferSchema=True)
 df = df.select('artist_name', 'track_name', 'release_date', 'genre', 'lyrics')
 
 tokenizer = Tokenizer(inputCol='lyrics',outputCol='mytokens')
